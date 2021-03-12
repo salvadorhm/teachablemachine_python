@@ -1,0 +1,5 @@
+python-telegram-bot==5.3.0
+tensorflow==2.4.1
+Keras==2.4.3clear
+Pillow==8.1.2
+web.py==0.62
