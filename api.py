@@ -40,12 +40,12 @@ class Api():
             '''
             Validate user and password
             '''
-            auth = auth.replace("Basic ","")
-            u = base64.b64decode(auth).decode("utf-8", "ignore")
-            user,password = u.split(":")
+            # auth = auth.replace("Basic ","")
+            # u = base64.b64decode(auth).decode("utf-8", "ignore")
+            # user,password = u.split(":")
 
-            if (user,password) in users:
-            # if auth == "1234": # Validate TOKEN
+            # if (user,password) in users:
+            if auth == "1234": # Validate TOKEN
                 form = web.input(image={})
                 result ={}
                 filedir = 'downloads' # change this to the directory you want to store the file in.

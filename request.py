@@ -8,7 +8,6 @@ payload = {"image": open('keyboard2.jpg', 'rb')}
 Authorization with user and pass
 '''
 auth = HTTPBasicAuth("user","pass")
-headers = {"Authorization": auth}
 response = requests.post(url, files = payload, auth = auth)
 
 '''
