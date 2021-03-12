@@ -9,11 +9,12 @@ Authorization with user and pass
 '''
 auth = HTTPBasicAuth("user","pass")
 headers = {"Authorization": auth}
-response = requests.post(url, files=payload, auth = auth)
+response = requests.post(url, files = payload, auth = auth)
 
 '''
 Authorization with a token
 '''
-# headers = {"Authorization": "1234"}
+# token = "1234"
+# headers = {"Authorization": token}
 # response = requests.post(url, files=payload, headers=headers)
 print(response.text)

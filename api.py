@@ -13,6 +13,24 @@ users = (
 )
 class Api():
 
+    def GET(self):
+        try:
+            result = {}
+            result["status"] = 200
+            result["message"] = {
+                "Authorization" : "Basic Auth",
+                "image" : "JPG File",
+                "method" : "POST"
+            }
+            return json.dumps(result)
+        except Exception as error:
+            result ={}
+            result["status"] = "400"
+            result["message"] = error.args[0]
+            return json.dumps(result)
+
+
+
     def POST(self):
         try:
             env = web.ctx.env
@@ -25,8 +43,6 @@ class Api():
             auth = auth.replace("Basic ","")
             u = base64.b64decode(auth).decode("utf-8", "ignore")
             user,password = u.split(":")
-            print(user)
-            print(password)
 
             if (user,password) in users:
             # if auth == "1234": # Validate TOKEN
